@@ -21,3 +21,5 @@ var mediaAtual = (nota1 + nota2) / 2;
 var notaMinima = (7 * 3) - (nota1 + nota2);
 
 console.log("Para passar com média sete, você precisa tirar no mínimo:", notaMinima.toFixed(2));
+
+// pequeno teste de githubdesktop
