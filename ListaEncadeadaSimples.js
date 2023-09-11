@@ -1,8 +1,8 @@
-import { no } from "./no.js";
+import { No } from "./no.js";
 
 export class ListaEncadeada{
-    var constructor(cabeca){
-        this.cabeca = null
+    constructor(){
+        this.cabeca = null;
         this.contador = 0;
     }
 
@@ -10,19 +10,19 @@ export class ListaEncadeada{
         let novoNo = new No(conteudo, null);
         if(this.cabeca != null){
             novoNo.proximo = this.cabeca;
-            this.cabeca = novoNo
-    
+            this.cabeca = novoNo;
         }else {
             this.cabeca = novoNo;
-        }
-
+        }        
+        this.contador ++;
+        return this.contador;
     }
 
     addNoFim(conteudo){
         let novoNo = new No(conteudo, null);
-        if(this.cabeca === null) {
-            this.caebeca = novoNo;
-        } else{
+        if (this.cabeca === null) {
+            this.cabeca = novoNo;
+        } else {
             let aux = this.cabeca;
             while(aux.proximo !== null){
                 aux = aux.proximo;
@@ -30,18 +30,26 @@ export class ListaEncadeada{
             aux.proximo = novoNo;
         }
         this.contador ++;
+        return this.contador;
     }
 
     addNoEm(conteudo, indice){
         let novoNo = new No(conteudo, null);
         if(this.contador < indice){
-            this.addNoFim(conteudo);
-        } else{
-            let noIndice;
-            for (let i = 0; i <= indice; i++) {
-                noIndice = this.cabeca.proximo;
+            return this.addNoFim(conteudo);
+        }else{
+            let noIndice = this.cabeca;
+            let noAnterior = null;
+            for (let i = 1; i < indice; i++) {
+                noAnterior = noIndice;
+                noIndice = this.noIndice.proximo;                
             }
+            noAnterior.proximo = novoNo;
+            novoNo.proximo = noIndice;
         }
+        this.contador++;
+        return this.contador;
     }
 
+    
 }
