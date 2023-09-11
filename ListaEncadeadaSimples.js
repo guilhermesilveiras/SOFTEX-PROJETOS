@@ -1,4 +1,4 @@
-import { No } from "./no.js";
+import { no } from "./no.js";
 
 export class ListaEncadeada{
     var constructor(cabeca){
@@ -33,7 +33,15 @@ export class ListaEncadeada{
     }
 
     addNoEm(conteudo, indice){
-        
+        let novoNo = new No(conteudo, null);
+        if(this.contador < indice){
+            this.addNoFim(conteudo);
+        } else{
+            let noIndice;
+            for (let i = 0; i <= indice; i++) {
+                noIndice = this.cabeca.proximo;
+            }
+        }
     }
 
 }
