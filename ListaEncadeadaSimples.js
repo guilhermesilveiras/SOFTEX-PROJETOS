@@ -20,7 +20,7 @@ export class ListaEncadeada{
 
     addNoFim(conteudo){
         let novoNo = new No(conteudo, null);
-        if(this cabeca === null) {
+        if(this.cabeca === null) {
             this.caebeca = novoNo;
         } else{
             let aux = this.cabeca.proximo;
