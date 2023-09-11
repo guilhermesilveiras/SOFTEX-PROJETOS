@@ -51,5 +51,17 @@ export class ListaEncadeada{
         return this.contador;
     }
 
+    removerPrimeiroNo(){
+        if(this.cabeca === null){
+            return null;
+        }else {
+            let aux = this.cabeca;
+            this.cabeca = this.cabeca.proximo;
+            aux.proximo = null;
+            this.contador--;
+            return aux.conteudo;
+        }
+    }
+
     
 }
