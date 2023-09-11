@@ -1,9 +1,21 @@
-function ListaEncadeada() {
-    let contador = 0;
-    let head = null;
 
-    thisGetCount = function() {
-        return contador;
-        
+
+export class ListaEncadeada{
+    var constructor(cabeca){
+        this.cabeca = null
+        this.contador = 0;
     }
+
+    addNoComeco(conteudo) {
+        let novoNo = new No(conteudo, null);
+        if(this.cabeca != null){
+            novoNo.proximo = this.cabeca;
+            this.cabeca = novoNo
+    
+        }else {
+            this.cabeca = novoNo;
+        }
+
+    }
+
 }
