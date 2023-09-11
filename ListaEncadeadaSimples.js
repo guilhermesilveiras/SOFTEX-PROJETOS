@@ -23,13 +23,17 @@ export class ListaEncadeada{
         if(this.cabeca === null) {
             this.caebeca = novoNo;
         } else{
-            let aux = this.cabeca.proximo;
-            while(aux !== null){
-                aux = aux. proximo;
+            let aux = this.cabeca;
+            while(aux.proximo !== null){
+                aux = aux.proximo;
             }
             aux.proximo = novoNo;
-                
         }
+        this.contador ++;
+    }
+
+    addNoEm(conteudo, indice){
+        
     }
 
 }
