@@ -1,4 +1,4 @@
-
+import { No } from "./no.js";
 
 export class ListaEncadeada{
     var constructor(cabeca){
@@ -16,6 +16,20 @@ export class ListaEncadeada{
             this.cabeca = novoNo;
         }
 
+    }
+
+    addNoFim(conteudo){
+        let novoNo = new No(conteudo, null);
+        if(this cabeca === null) {
+            this.caebeca = novoNo;
+        } else{
+            let aux = this.cabeca.proximo;
+            while(aux !== null){
+                aux = aux. proximo;
+            }
+            aux.proximo = novoNo;
+                
+        }
     }
 
 }
