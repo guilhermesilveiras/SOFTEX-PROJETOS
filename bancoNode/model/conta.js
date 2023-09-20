@@ -15,7 +15,7 @@ export class Conta{
     //depositar na conta
     depositar(valor){
         this.saldo += valor;
-        let trans = new Transacao(TIPOTRANS, deposito, new Date().toLocaleDateString(), valor, null, '+');
+        let trans = new Transacao(TIPOTRANS.deposito, new Date().toLocaleDateString(), valor, null, '+');
         this.transacoes.push(trans);
     }
 
