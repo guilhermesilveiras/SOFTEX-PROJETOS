@@ -1,5 +1,5 @@
 import { Conta } from "./conta.js";
-import { Cliente } from "./cliente";
+import { Cliente } from "./cliente.js";
 
 let cliGuilherme = new Cliente('Guilherme Silveira')
 let contaGuilherme = new Conta(1711, 2000);
