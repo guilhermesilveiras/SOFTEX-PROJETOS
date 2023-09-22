@@ -10,7 +10,13 @@ let endCli = new Endereco('PE', 'Recife', 'Cordeiro', 'Rua Rio Jiquiá', 88, nul
 let cliEgito = new Cliente('José Egito', '111.222.333-00', new Date('2014-10-10').toLocaleString(), '4455558', 'egito@softex.com', '819999999', endCli)
 let contaEgito = new Conta(cliEgito, 765432, agencia, 1378.50);
 
+let endOnelia = new Endereco('PE', 'Recife', 'Pina', 'Av. Boa Viagem', '176', 'Ap 1203', )
+let cliOnelia = 
+let contaOnelia = new Conta(cliOnelia, 765455, agencia, 14001.50);
+
 contaEgito.depositar(300);
 contaEgito.sacar(500);
 
-console.log(contaEgito);
+//alert(JSON.stringify(contaEgito));
+//console.log(contaEgito);
+console.log(contaEgito.mostrarExtrato());

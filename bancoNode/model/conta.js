@@ -27,7 +27,7 @@ export class Conta{
             this.transacoes.push(trans);
         } else {
             //lançar um erro
-            console.log('Erro: saldo insuficiente' , valor + 'maior que o saldo' + this.saldo + '-'); 
+            console.error('Erro: saldo insuficiente' , valor + 'maior que o saldo' + this.saldo + '-'); 
             
         }
     }
@@ -43,7 +43,7 @@ export class Conta{
             this.transacoes.push(trans);
         } else {
             // lançar um erro
-            console.log('Erro: saldo insuficiente' + valor + 'para transfwerir, seu saldo é' + this.saldo + '-');
+            console.error('Erro: saldo insuficiente' + valor + 'para transfwerir, seu saldo é' + this.saldo + '-');
         }
     }
 
@@ -55,7 +55,7 @@ export class Conta{
             this.transacoes.push(trans);
         } else {
         //lançar um erro
-        console.log('Erro: saldo insuficiente' + valor + 'maior do que o seu saldo' + this.saldo + 'para realizar o pagamento');
+        console.error('Erro: saldo insuficiente' + valor + 'maior do que o seu saldo' + this.saldo + 'para realizar o pagamento');
         }
     }
 
@@ -64,6 +64,24 @@ export class Conta{
         return this.saldo;
     }
 
+    toString() {
+        return '\tAgência : ' + this.agencia.numero + 'Conta : ' + this.numero + '\n';
+    }
+
     //extrato da conta
+    mostrarExtrato() {
+        let extrato = '\t\tEXTRATO DE CONTA BANCÁRIA\n';
+        extrato += '\t--------------------------------\n';
+        extrato += this.toString() + '\n';
+        extrato += this.cliente.toString() + '\n';
+        extrato += '\t--------------------------------\n';
+        extrato += '\tDATA\t\tHISTÓRICO\t\tVALOR(R$)\n';
+        for (const trans of this.transacoes) {
+            extrato += trans.toString();
+        }
+        extrato += '\t--------------------------------\n';
+        extrato += '\tSaldo\t\t' + this.saldo + '\n'
+        return extrato;
+    }
     
 }

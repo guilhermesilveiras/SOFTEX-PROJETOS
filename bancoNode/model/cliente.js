@@ -7,5 +7,10 @@ export class Cliente{
         this.email = email;
         this.telefone = telefone;
         this.endereco = endereco;
+
+    }
+
+    toString() {
+        return "\tCliente: " + this.nome + " | CPF: " + this.cpf + "\n";
     }
 }
