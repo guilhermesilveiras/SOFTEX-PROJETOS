@@ -48,8 +48,22 @@ export class Conta{
     }
 
     //pagamento da conta
+    pagar(valor) {
+        if (this.saldo >= valor) {
+            this.saldo -= valor;
+            let trans = new Transacao(TIPOTRANS.pagamento, transferencia, new Date().toLocaleDateString(), valor, null, '-');
+            this.transacoes.push(trans);
+        } else {
+        //lançar um erro
+        console.log('Erro: saldo insuficiente' + valor + 'maior do que o seu saldo' + this.saldo + 'para realizar o pagamento');
+        }
+    }
 
     //saldo da conta
+    mostrarSaldo() {
+        return this.saldo;
+    }
 
     //extrato da conta
+    
 }
