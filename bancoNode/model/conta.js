@@ -33,6 +33,19 @@ export class Conta{
     }
 
     //transferir da conta
+    transferir(valor, contaFav) {
+        if (this.saldo>=valor) {
+            this.saldo -= valor;
+            contaFav.depositar(valor);
+            let transFav = new Transacao(TIPOTRANS, transferencia, new Date().toLocaleDateString(), valor,contaFav.cliente.nome, '+' );
+            contaFav.transacoes.push(transFav);
+            let trans = new Transacao(TIPOTRANS, transferencia, new Date().toLocaleDateString(), valor, contaFav.cliente.nome, '-' );
+            this.transacoes.push(trans);
+        } else {
+            // lançar um erro
+            console.log('Erro: saldo insuficiente' + valor + 'para transfwerir, seu saldo é' + this.saldo + '-');
+        }
+    }
 
     //pagamento da conta
 
