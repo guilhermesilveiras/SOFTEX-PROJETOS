@@ -37,9 +37,9 @@ export class Conta{
         if (this.saldo>=valor) {
             this.saldo -= valor;
             contaFav.depositar(valor);
-            let transFav = new Transacao(TIPOTRANS, transferencia, new Date().toLocaleDateString(), valor,contaFav.cliente.nome, '+' );
+            let transFav = new Transacao(TIPOTRANS.transferencia, new Date().toLocaleDateString(), valor, this.cliente.nome, '+');
             contaFav.transacoes.push(transFav);
-            let trans = new Transacao(TIPOTRANS, transferencia, new Date().toLocaleDateString(), valor, contaFav.cliente.nome, '-' );
+            let trans = new Transacao(TIPOTRANS.transferencia, new Date().toLocaleDateString(), valor, contaFav.cliente.nome, '-');
             this.transacoes.push(trans);
         } else {
             // lançar um erro
@@ -51,7 +51,7 @@ export class Conta{
     pagar(valor) {
         if (this.saldo >= valor) {
             this.saldo -= valor;
-            let trans = new Transacao(TIPOTRANS.pagamento, transferencia, new Date().toLocaleDateString(), valor, null, '-');
+            let trans = new Transacao(TIPOTRANS.pagamento, new Date().toLocaleDateString(), valor, null, '-');
             this.transacoes.push(trans);
         } else {
         //lançar um erro
