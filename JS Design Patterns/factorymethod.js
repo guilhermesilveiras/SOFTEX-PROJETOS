@@ -43,6 +43,6 @@ class Computer {
   const server1 = factory.createComputer("Server", 16, 1000, 2.4);
   const server2 = factory.createComputer("Server", 32, 2000, 3.2);
   
-  console.log(pc.toString());
-  console.log(server.toString());
+  console.log(pc2.toString());
+  console.log(server1.toString());
   
