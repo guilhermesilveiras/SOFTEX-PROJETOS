@@ -5,7 +5,7 @@ export abstract class Computador implements iProduto {
     private Memoria: number;
     private Armazenamento: number;
     private Tipo: string;
-     preco: number;
+    protected preco: number;
 
     constructor(CPU: number, Memoria: number, Armazenamento: number, Tipo: string, preco: number) {
         this.CPU = CPU;
