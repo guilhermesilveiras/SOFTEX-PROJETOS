@@ -24,4 +24,4 @@ console.log(pcSoftex?.toString());
 let servidorSoftex2 = Object.create(servidorSoftex)
 servidorSoftex2.setSistemaRAID("RAID 7");
 servidorSoftex2.setSO("Ubuntu");
-servidorSoftex2.CPU
+
